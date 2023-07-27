@@ -1,0 +1,145 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 281px;
+  background-color: #222;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+
+.card__cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: #222;
+  border-radius: 6px 6px 0 0;
+}
+
+.card__link {
+  display: flex;
+  justify-content: center;
+  height: calc(100% - 78px);
+}
+
+.card__content {
+  padding: 9px 16px 16px;
+  max-height: 78px;
+}
+
+.card__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card__title {
+  margin: 0;
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.card__like-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../../images/like-buttonoff.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #222;
+  border: none;
+  transition: opacity 1s linear;
+  cursor: pointer;
+}
+
+.card__like-btn_active {
+  display: block;
+  background-image: url(../../../images/like-button.svg);
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #222;
+  border: none;
+  cursor: pointer;
+  transition: opacity 1s linear;
+}
+
+.card__like-btn_active:hover {
+  opacity: 0.7;
+}
+
+.card__like-btn:hover {
+  opacity: 0.7;
+}
+
+.card__delete-btn {
+  display: block;
+  background-image: url(../../../images/delete-btn.svg);
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #222;
+  border: none;
+  cursor: pointer;
+  transition: opacity 1s linear;
+}
+
+.card__delete-btn:hover {
+  opacity: 0.7;
+}
+
+.card__duration {
+  color: #8b8b8b;
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1270px) {
+  .card {
+    max-width: 339px;
+    min-height: 262px;
+  }
+  .card__cover {
+    max-width: 339px;
+    min-height: 190px;
+  }
+
+  .card__content {
+    padding: 8px 14px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .card {
+    max-width: 300px;
+    min-height: 237px;
+  }
+  .card__cover {
+    max-width: 300px;
+    min-height: 168px;
+  }
+
+  .card__content {
+    padding: 7px 10px 14px;
+  }
+  .card__title {
+    font-size: 12px;
+  }
+  .card__duration {
+    font-size: 10px;
+  }
+}

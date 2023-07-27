@@ -1,0 +1,212 @@
+.sign {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #202020;
+  box-sizing: border-box;
+}
+
+.sign__container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 22px 30px 70px;
+  display: flex;
+  flex-direction: column;
+  width: 456px;
+}
+
+.sign__header {
+  width: 100%;
+  max-width: 396px;
+  margin-bottom: 40px;
+}
+
+.sign__logo-link {
+  transition: opacity 1s ease-out;
+}
+
+.sign__logo-link:hover {
+  opacity: 0.7;
+}
+
+.sign__logo {
+  margin-bottom: 40px;
+  width: 38px;
+  height: 38px;
+}
+
+.sign__title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.sign__form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .sign__error-message {
+  height: 12px;
+  margin: 0 auto 20px;
+} */
+
+.sign__error {
+  /* box-sizing: border-box;
+  visibility: hidden; */
+  margin: 6px 0 0;
+  min-height: 24px;
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+}
+.form__label {
+  display: flex;
+  flex-direction: column;
+  color: #8b8b8b;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0px;
+}
+
+/* .form__label:not(:last-of-type) {
+  margin-bottom: 20px;
+} */
+
+.form__input {
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #2f2f2f;
+  border: none;
+  padding: 15px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sign__submit-btn {
+  max-width: 396px;
+  height: 45px;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  border-radius: 3px;
+  background: #4285f4;
+  transition: opacity 1s linear;
+  margin-top: 59px;
+}
+
+.sign__submit-btn_disabled {
+  color: #c2c2c2;
+  background: #f8f8f8;
+  cursor: auto;
+}
+
+.sign__submit-btn:hover {
+  opacity: 0.7;
+}
+
+#login-btn {
+  margin-top: 147px;
+}
+
+.sign__question {
+  max-width: 396px;
+  color: #8b8b8b;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 16px;
+}
+
+.sign__link {
+  color: #4285f4;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  margin-left: 7px;
+  transition: opacity 1s linear;
+}
+
+.sign__link:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .sign__form {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .sign {
+    height: 100vh;
+  }
+
+  .sign__container {
+    width: 320px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 56px 30px 30px;
+    height: 100%;
+  }
+
+  .sign__header {
+    margin-bottom: 80px;
+    max-width: 260px;
+    text-align: center;
+  }
+  .sign__logo {
+    margin-bottom: 50px;
+  }
+
+  .sign__submit-btn {
+    max-width: 260px;
+    font-size: 12px;
+    padding: 0 67px;
+    margin-top: 155px;
+  }
+  .sign__question {
+    margin-top: 14px;
+  }
+  .sign__question {
+    font-size: 12px;
+  }
+
+  .sign__link {
+    font-size: 12px;
+  }
+
+  .form__input {
+    max-width: 260px;
+  }
+}
