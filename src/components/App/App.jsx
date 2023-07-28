@@ -142,7 +142,6 @@ function App() {
               <>
                 <Header
                   loggedIn={loggedIn}
-                  handleOverlayClick={handleOverlayClick}
                 />
                 <Main />
                 <Footer />
@@ -155,7 +154,6 @@ function App() {
               <ProtectedRoute loggedIn={true}>
                 <Header
                   loggedIn={true}
-                  handleOverlayClick={handleOverlayClick}
                 />
                 <Movies />
                 <Footer />
@@ -168,7 +166,6 @@ function App() {
               <ProtectedRoute loggedIn={true}>
                 <Header
                   loggedIn={true}
-                  handleOverlayClick={handleOverlayClick}
                 />
                 <SavedMovies />
                 <Footer />
@@ -207,7 +204,6 @@ function App() {
               <ProtectedRoute loggedIn={true}>
                 <Header
                   loggedIn={true}
-                  handleOverlayClick={handleOverlayClick}
                 />
                 <Profile
                   signOut={signOut}

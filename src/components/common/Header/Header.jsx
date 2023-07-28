@@ -4,7 +4,7 @@ import './Header.css';
 import cn from 'classnames';
 import Navigation from '../Navigation/Navigation';
 
-function Header({ loggedIn, handleOverlayClick }) {
+function Header({ loggedIn }) {
   const { pathname } = useLocation();
 
   const headerClassNames = cn('header', {
@@ -25,9 +25,7 @@ function Header({ loggedIn, handleOverlayClick }) {
         </Link>
         {loggedIn ? (
           <>
-            <Navigation
-              handleOverlayClick={handleOverlayClick}
-            />
+            <Navigation />
           </>
         ) : (
           <nav className='header__navigate'>

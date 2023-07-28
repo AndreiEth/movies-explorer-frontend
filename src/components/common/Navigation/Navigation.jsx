@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useDevice from '../../../hooks/device';
 
-function Navigation({ handleOverlayClick }) {
+function Navigation() {
   const { isDesktop } = useDevice();
   const showBurgerMenu = !isDesktop;
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,10 @@ function Navigation({ handleOverlayClick }) {
     'navigation__hamburger-main': pathname === '/',
   });
 
+  const closeNav = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     document.body.classList.toggle('noScroll', isOpen);
   }, [isOpen]);
@@ -26,7 +30,6 @@ function Navigation({ handleOverlayClick }) {
   return (
     <nav
       className={showBurgerMenu ? "navigation" : "navigation"}
-      onClick={handleOverlayClick}
     >
       <button
         className={mainClassNames}
@@ -44,13 +47,20 @@ function Navigation({ handleOverlayClick }) {
           />
         )}
       </button>
-      <div className={cn("navigation__background", { hidden: !isOpen })}>
-        <div className={cn("navigation__wrapper")}>
+      <div
+        className={cn("navigation__background", { hidden: !isOpen })}
+        onClick={closeNav}
+      >
+        <div
+          className={cn("navigation__wrapper")}
+          onClick={(event) => event.stopPropagation()}
+        >
           <div className={"navigation__content"}>
             {showBurgerMenu && (
               <NavLink
                 to='/'
                 className='navigation__link'
+                onClick={closeNav}
               >
                 Главная
               </NavLink>
@@ -59,12 +69,14 @@ function Navigation({ handleOverlayClick }) {
             <NavLink
               to='/movies'
               className='navigation__link'
+              onClick={closeNav}
             >
               Фильмы
             </NavLink>
             <NavLink
               to='/saved-movies'
               className='navigation__link'
+              onClick={closeNav}
             >
               Сохранённые фильмы
             </NavLink>
@@ -73,12 +85,14 @@ function Navigation({ handleOverlayClick }) {
             <NavLink
               to='/profile'
               className='navigation__link'
+              onClick={closeNav}
             >
               Аккаунт
             </NavLink>
             <Link
               to='/profile'
               className='navigation__profile-image-link'
+              onClick={closeNav}
             >
               <img
                 className='navigation__profile-image'
