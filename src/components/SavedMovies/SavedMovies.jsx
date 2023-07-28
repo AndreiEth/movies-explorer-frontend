@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import MoviesCardList from '../common/MoviesCardList/MoviesCardList';
 import SearchForm from '../common/SearchForm/SearchForm';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
@@ -9,8 +9,9 @@ function SavedMovies () {
   const [searchMovies, setSearchMovies] = useState(savedMovies);
   const [isShortMovies, setIsShortMovies] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [keyWord, setKeyWord] = useState(''); 
 
-  const handleSubmitSearch = (keyWord) => {
+  const doSearch = () => {
     const filtered = filterMovies(savedMovies, keyWord, isShortMovies);
 
     if (filtered.length) {
@@ -20,6 +21,15 @@ function SavedMovies () {
       setErrorMessage('Ничего не найдено')
     }
   };
+
+  const handleSubmitSearch = (keyWord) => {
+    setKeyWord(keyWord);
+    doSearch();
+  };
+
+  useEffect(() => {
+    doSearch();
+  }, [savedMovies]) 
 
 	return (
     <main>

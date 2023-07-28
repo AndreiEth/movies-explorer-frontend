@@ -140,9 +140,7 @@ function App() {
             path='/'
             element={
               <>
-                <Header
-                  loggedIn={loggedIn}
-                />
+                <Header loggedIn={loggedIn} />
                 <Main />
                 <Footer />
               </>
@@ -151,10 +149,8 @@ function App() {
           <Route
             path='/movies'
             element={
-              <ProtectedRoute loggedIn={true}>
-                <Header
-                  loggedIn={true}
-                />
+              <ProtectedRoute loggedIn={loggedIn}>
+                <Header loggedIn={loggedIn} />
                 <Movies />
                 <Footer />
               </ProtectedRoute>
@@ -163,10 +159,8 @@ function App() {
           <Route
             path='/saved-movies'
             element={
-              <ProtectedRoute loggedIn={true}>
-                <Header
-                  loggedIn={true}
-                />
+              <ProtectedRoute loggedIn={loggedIn}>
+                <Header loggedIn={loggedIn} />
                 <SavedMovies />
                 <Footer />
               </ProtectedRoute>
@@ -201,10 +195,8 @@ function App() {
           <Route
             path='/profile'
             element={
-              <ProtectedRoute loggedIn={true}>
-                <Header
-                  loggedIn={true}
-                />
+              <ProtectedRoute loggedIn={loggedIn}>
+                <Header loggedIn={loggedIn} />
                 <Profile
                   signOut={signOut}
                   setTooltipSettings={setTooltipSettings}

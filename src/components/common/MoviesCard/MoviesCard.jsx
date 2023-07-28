@@ -41,7 +41,7 @@ function MoviesCard({ movie, saveStatus }) {
       .then(() => {
         setSavedMovies(
           savedMovies.filter((data) => {
-            return !(data._id === mainApiId);
+            return data._id !== mainApiId;
           })
         );
         setIsSaved(false);
