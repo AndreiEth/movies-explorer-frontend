@@ -155,7 +155,7 @@
 
 @media screen and (max-width: 460px) {
   .profile {
-    padding: 70px 0 40px;
+    padding: 70px 10px 40px;
   }
   .profile__title {
     margin-bottom: 80px;

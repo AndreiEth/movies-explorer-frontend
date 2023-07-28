@@ -5,20 +5,17 @@ import Account from '../../../images/icon__COLOR_icon-main.svg';
 import hamburger from '../../../images/burger-menu.svg';
 import closeBtn from '../../../images/close-btn.svg';
 import { useLocation } from 'react-router-dom';
-import useClose from '../../../hooks/close';
 import { useState, useEffect } from 'react';
 import useDevice from '../../../hooks/device';
 
-function Navigation({ isMenuOpen, handleOverlayClick }) {
+function Navigation({ handleOverlayClick }) {
   const { isDesktop } = useDevice();
   const showBurgerMenu = !isDesktop;
   const [isOpen, setIsOpen] = useState(false);
 
-  useClose(isMenuOpen);
-
   const { pathname } = useLocation();
 
-  const navigationClassNames = cn('navigation__hamburger', {
+  const mainClassNames = cn('navigation__hamburger', {
     'navigation__hamburger-main': pathname === '/',
   });
 
@@ -28,11 +25,11 @@ function Navigation({ isMenuOpen, handleOverlayClick }) {
 
   return (
     <nav
-      className={showBurgerMenu ? 'navigation' : 'navigation'}
+      className={showBurgerMenu ? "navigation" : "navigation"}
       onClick={handleOverlayClick}
     >
       <button
-        className={navigationClassNames}
+        className={mainClassNames}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
@@ -47,9 +44,9 @@ function Navigation({ isMenuOpen, handleOverlayClick }) {
           />
         )}
       </button>
-      <div className={cn('navigation__background', { hidden: !isOpen })}>
-        <div className={cn('navigation__wrapper')}>
-          <div className={'navigation__content'}>
+      <div className={cn("navigation__background", { hidden: !isOpen })}>
+        <div className={cn("navigation__wrapper")}>
+          <div className={"navigation__content"}>
             {showBurgerMenu && (
               <NavLink
                 to='/'
