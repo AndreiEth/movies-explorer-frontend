@@ -1,10 +1,10 @@
-import MoviesCardList from '../common/MoviesCardList/MoviesCardList';
-import SearchForm from '../common/SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import SearchForm from '../SearchForm/SearchForm';
 import './Movies.css';
-import Preloader from '../common/Preloader/Preloader';
+import Preloader from '../Preloader/Preloader';
 import { useState, useEffect } from 'react';
-import MoviesApi from '../../utils/MoviesApi';
-import { normalizeMovies, filterMovies } from '../../utils/constants';
+import MoviesApi from '../../../utils/MoviesApi';
+import { normalizeMovies, filterMovies } from '../../../utils/constants';
 
 function Movies() {
   const [searchedMovies, setSearchedMovies] = useState([]);

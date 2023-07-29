@@ -104,23 +104,29 @@
 }
 
 .profile__submit-btn {
-  margin-top: auto;
-  max-width: 410px;
-  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
   text-align: center;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  background: #202020;
+  color: #fff;
+  background: #3456f3;
   border: none;
+  border-radius: 3px;
   cursor: pointer;
   transition: opacity 1s linear;
 }
 
 .profile__submit-btn:hover {
   opacity: 0.7;
+}
+
+.profile__submit-btn:disabled {
+  color: #c2c2c2;
+  background: #f8f8f8;
+  cursor: auto;
 }
 
 .profile__exit-btn {
