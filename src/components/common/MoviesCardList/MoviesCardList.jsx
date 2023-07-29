@@ -7,7 +7,8 @@ import useDevice from '../../../hooks/device';
 
 function MoviesCardList({ movies, showMore }) {
   const { pathname } = useLocation();
-  const { isMobile, isTablet } = useDevice();
+  const { isMobile, isBigMobile, isTablet, isBigTablet, isDesktop } =
+    useDevice();
   const { savedMovies } = useContext(CurrentUserContext);
   const [moviesLength, setMoviesLength] = useState(0);
   const [isMoreButton, setIsMoreButton] = useState(false);
@@ -19,9 +20,9 @@ function MoviesCardList({ movies, showMore }) {
   };
 
   useEffect(() => {
-    if (isMobile) {
+    if (isMobile || isBigMobile) {
       setMoviesLength(Length.MOBILE);
-    } else if (isTablet) {
+    } else if (isTablet || isBigTablet) {
       setMoviesLength(Length.TABLET);
     } else {
       setMoviesLength(Length.DESKTOP);
@@ -40,10 +41,10 @@ function MoviesCardList({ movies, showMore }) {
 
   const handleMoreBtnClick = () => {
     setMoviesLength((current) => {
-      if (isTablet) {
+      if (isTablet || isBigTablet) {
         return current + 2;
-      }
-      return current + 3;
+      } else if (isMobile || isBigMobile || isDesktop) 
+	  {return current + 3};
     });
   };
 
