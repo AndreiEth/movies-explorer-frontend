@@ -17,7 +17,7 @@ import InfoTooltip from '../common/InfoTooltip/InfoTooltip';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(null);
   const [savedMovies, setSavedMovies] = useState([]);
   const [isInfoTooltipPopupOpen, setInfoTooltipPopupOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
